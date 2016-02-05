@@ -1,11 +1,27 @@
-Installation:
 
-    git clone git://github.com/nelstrom/dotvim.git ~/.vim
+## VIM Setup
 
-Create symlinks:
+Following the method described here http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
 
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
+
+## Adding a plugin with Pathogen and git submodules 
+
+E.g.
+
+```
+    git submodule add https://github.com/vim-airline/vim-airline bundle/vim-airline
+```
+
+## Create symlinks:
+
+```
+    ln -s ~/myconf/vim/vimrc ~/.vimrc
+    ln -s ~/myconf/vim ~/.vim
+```
+Make sure the Pathogen URL is set inside the vimrc (call pathogen#infect('~/myconf/vim/bundle/{}'))
+
+
+## Instal Plugins
 
 Switch to the `~/.vim` directory, and fetch submodules:
 
