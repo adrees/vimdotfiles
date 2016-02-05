@@ -6,11 +6,10 @@ Following the method described here http://vimcasts.org/episodes/synchronizing-p
 
 ## Adding a plugin with Pathogen and git submodules 
 
-E.g.
-
 ```
     git submodule add https://github.com/vim-airline/vim-airline bundle/vim-airline
 ```
+
 
 ## Create symlinks:
 
