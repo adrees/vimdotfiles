@@ -40,10 +40,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " It is essential Pathogen is activated before filetype detection
-call pathogen#runtime_append_all_bundles()
+"
+call pathogen#infect('~/reesad_conf/vim/bundle/{}')
 call pathogen#helptags()
 
-" call pathogen#infect('~/.vim/bundle')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -443,7 +443,12 @@ set foldmethod=manual
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " so this fix syntastic
+
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 " Required for logcat syntax highlighting
 au BufRead,BufNewFile *.logcat set filetype=logcat 
