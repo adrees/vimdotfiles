@@ -485,6 +485,7 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 " Show buffers at top
 
 let g:airline#extensions#tabline#enabled = 1
+let g:syntastic_loc_list_height=5
 
 " Reload .vimrc with :so %
 " Portable vim config http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
