@@ -468,12 +468,16 @@ noremap <leader>fxml :%!xmllint --format %<cr>
 noremap <leader>ns :!gnsync --path %:p<cr>
 
 " use js instead of escape enter normal mode
-:inoremap jk <esc> 
+" :inoremap jk <esc> 
 noremap <esc> <nop>
 noremap <up> <nop>
 noremap <down> <nop>
 noremap <right> <nop>
 noremap <left> <nop>
+
+" get rid of the dam lowercase issue in visual mode
+
+vmap <esc> <c-c>
 
 " let NERDTreeMapOpenInTab='<ENTER>'
 
