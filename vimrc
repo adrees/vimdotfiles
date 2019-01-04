@@ -41,7 +41,8 @@
 
 " It is essential Pathogen is activated before filetype detection
 "
-call pathogen#infect('~/reesad_conf/vim/bundle/{}')
+call pathogen#infect()
+" call pathogen#infect('~/reesad_conf/vim/bundle/{}')
 call pathogen#helptags()
 
 
@@ -449,6 +450,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" Typescript only
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+
 " Required for logcat syntax highlighting
 au BufRead,BufNewFile *.logcat set filetype=logcat 
 
@@ -491,5 +496,62 @@ map <F5> :setlocal spell! spelllang=en_us<CR>
 let g:airline#extensions#tabline#enabled = 1
 let g:syntastic_loc_list_height=5
 
+" put a bit of margin on the left
+set foldcolumn=3
+
 " Reload .vimrc with :so %
 " Portable vim config http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules-and-pathogen/
+"
+"
+"
+
+"
+"
+"
+" OmniSharp won't work without this setting
+filetype plugin on
+
+"This is the default value, setting it isn't actually necessary
+let g:OmniSharp_host = "http://localhost:2000"
+
+"Set the type lookup function to use the preview window instead of the status line
+"let g:OmniSharp_typeLookupInPreview = 1
+
+"Timeout in seconds to wait for a response from the server
+let g:OmniSharp_timeout = 1
+
+"Showmatch significantly slows down omnicomplete
+"when the first match contains parentheses.
+set noshowmatch
+
+"Super tab settings - uncomment the next 4 lines
+"let g:SuperTabDefaultCompletionType = 'context'
+"let g:SuperTabContextDefaultCompletionType = "<c-x><c-o>"
+"let g:SuperTabDefaultCompletionTypeDiscovery = ["&omnifunc:<c-x><c-o>","&completefunc:<c-x><c-n>"]
+"let g:SuperTabClosePreviewOnPopupClose = 1
+
+"don't autoselect first item in omnicomplete, show if only one item (for preview)
+"remove preview if you don't want to see any documentation whatsoever.
+set completeopt=longest,menuone,preview
+" Fetch full documentation during omnicomplete requests.
+" There is a performance penalty with this (especially on Mono)
+" By default, only Type/Method signatures are fetched. Full documentation can still be fetched when
+" you need it with the :OmniSharpDocumentation command.
+" let g:omnicomplete_fetch_documentation=1
+
+"Move the preview window (code documentation) to the bottom of the screen, so it doesn't move the code!
+"You might also want to look at the echodoc plugin
+set splitbelow
+
+" let g:virtualenv_directory = "~/.pyenv/versions"
+" let g:syntastic_ignore_files = ['\.py$']
+
+"python with virtualenv support
+" py << EOF
+" import os
+" import sys
+" if 'VIRTUAL_ENV' in os.environ:
+"   project_base_dir = os.environ['VIRTUAL_ENV']
+"   activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+"   execfile(activate_this, dict(__file__=activate_this))
+"EOF
