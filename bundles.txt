@@ -1,0 +1,14 @@
+ale
+ctrlp.vim
+fugitive
+jdaddy
+nerdcommenter
+nerdtree
+tern_for_vim
+tsuquyomi
+typescript-vim
+vim-airline
+vim-dispatch
+vim-surround
+vim-virtualenv
+vimproc.vim

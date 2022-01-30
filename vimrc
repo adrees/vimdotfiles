@@ -1,9 +1,6 @@
 "
 " Adam's VIMRC
 "
-
-syntax on
-
 set fileformat=unix
 set encoding=UTF-8
 
@@ -95,7 +92,6 @@ function! VisualSelection(direction) range
 endfunction
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 so ~/.vim/plugins.vim
 
 " Style and font tweaks
@@ -104,3 +100,4 @@ set guifont=Menlo:h16
 
 " Tweak all the plugins here
 so ~/.vim/plugin-config.vim
+
